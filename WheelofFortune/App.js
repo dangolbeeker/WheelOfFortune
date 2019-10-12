@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { GestureHandler, Svg } from 'expo'
+import * as d3Shape from 'd3-shape';
+import color from 'randomcolor';
+import {snap} from '@popmotion/popcorn';
+const { PanGestureHandler, State} = GestureHandler;
+const {Path, G, Text, Tsplash} = Svg;
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-});
+const numberOfSegments = 10;
+const makeWheel = () => {
+  const data = Array.from({length: numberOfSegments}).fill(1);
+}
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text> Wheel of Fortune</Text>
       </View>
     );
   }
